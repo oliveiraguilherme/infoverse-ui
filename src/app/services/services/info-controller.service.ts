@@ -13,6 +13,8 @@ import { getAll } from '../fn/info-controller/get-all';
 import { GetAll$Params } from '../fn/info-controller/get-all';
 import { getHello } from '../fn/info-controller/get-hello';
 import { GetHello$Params } from '../fn/info-controller/get-hello';
+import { ComicsDTO } from '../models/ComicsDTO ';
+import { GetPaginated$Params } from '../fn/info-controller/getPaginated';
 
 
 /**
@@ -58,7 +60,7 @@ export class InfoControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAll$Response(params?: GetAll$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<string>>> {
+  getAll$Response(params?: GetAll$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<ComicsDTO>>> {
     return getAll(this.http, this.rootUrl, params, context);
   }
 
@@ -68,10 +70,23 @@ export class InfoControllerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  getAll(params?: GetAll$Params, context?: HttpContext): Observable<Array<string>> {
+  getAll(params?: GetAll$Params, context?: HttpContext): Observable<Array<ComicsDTO>> {
     return this.getAll$Response(params, context).pipe(
-      map((r: StrictHttpResponse<Array<string>>): Array<string> => r.body)
+      map((r: StrictHttpResponse<Array<ComicsDTO>>): Array<ComicsDTO> => r.body)
     );
   }
+
+  getAllPaginated(page: number, size: number): Observable<Array<ComicsDTO>> {
+    const url = `${this.rootUrl}/info/getAll?page=${page}&size=${size}`;
+
+    return this.http.get<ComicsDTO[]>(url).pipe(
+      map((response: ComicsDTO[]) => {
+        return response;
+      })
+    );
+  }
+
+  
+
 
 }

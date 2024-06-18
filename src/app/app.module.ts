@@ -8,6 +8,12 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HttpTokenInterceptor } from './services/interceptor/http-token.interceptor';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { PanelModule } from 'primeng/panel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importação necessária
+import { PaginatorModule } from 'primeng/paginator'
+
 
 
 @NgModule({
@@ -20,7 +26,12 @@ import { HttpTokenInterceptor } from './services/interceptor/http-token.intercep
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        ButtonModule,
+        PanelModule,
+        BrowserAnimationsModule,
+        PaginatorModule,
+        CardModule
     ],
   providers: [
     HttpClient,
