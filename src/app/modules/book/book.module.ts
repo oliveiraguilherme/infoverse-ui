@@ -10,6 +10,7 @@ import { PaginatorModule } from 'primeng/paginator'
 import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
 import { AvatarModule } from 'primeng/avatar'; // Adicione esta linha
+import { CarouselModule } from 'primeng/carousel';
 
 
 
@@ -25,7 +26,8 @@ import { AvatarModule } from 'primeng/avatar'; // Adicione esta linha
     PaginatorModule,
     CardModule,
     MenubarModule,
-    AvatarModule 
+    AvatarModule,
+    CarouselModule
   ]
 })
 export class BookModule { }

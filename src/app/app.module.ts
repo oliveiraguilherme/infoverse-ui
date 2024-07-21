@@ -16,6 +16,7 @@ import { PaginatorModule } from 'primeng/paginator'
 import { MythosModule } from './modules/mythos/mythos.module';
 import { BookModule } from './modules/book/book.module';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { CarouselModule } from 'primeng/carousel';
 
 
 
@@ -37,7 +38,8 @@ import { LayoutComponent } from './pages/layout/layout.component';
         PaginatorModule,
         CardModule,
         MythosModule,
-        BookModule
+        BookModule,
+        CarouselModule
     ],
   providers: [
     HttpClient,

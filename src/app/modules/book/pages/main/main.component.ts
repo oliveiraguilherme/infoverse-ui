@@ -3,6 +3,7 @@ import { InfoControllerService } from '../../../../services/services';
 import { Router } from '@angular/router';
 import { ComicsDTO } from '../../../../services/models/ComicsDTO ';
 import { MenuItem } from 'primeng/api/menuitem';
+import {CarouselModule} from 'primeng/carousel';
 
 @Component({
   selector: 'app-main',
@@ -15,6 +16,16 @@ export class MainComponent implements OnInit {
   itemsPerPage: number = 10;
   currentPage: number = 0;
   items: MenuItem[] | undefined;
+  editoras = [
+    { name: 'Mythos', route: 'mythos' },
+    { name: 'Panini', route: 'panini' },
+    { name: 'Panini', route: 'panini' },
+    { name: 'Panini', route: 'panini' },
+    { name: 'Panini', route: 'panini' },
+    { name: 'Panini', route: 'panini' },
+    { name: 'Panini', route: 'panini' },
+    { name: 'Panini', route: 'panini' },
+  ];
 
   constructor(
     private router: Router,

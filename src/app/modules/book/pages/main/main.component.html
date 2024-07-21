@@ -47,7 +47,32 @@
     </ng-template>
 </p-menubar>
 -->
+<p-carousel [value]="editoras" [numVisible]="3" [numScroll]="1">
+    <ng-template let-editoras pTemplate="item">
+        <div class="option-box" (click)="navigateTo('mythos')">
+            <p>{{editoras.name}}</p>
+          </div>
+    </ng-template>
+</p-carousel>
 <div class="home-container">
+    <div class="option-box" (click)="navigateTo('mythos')">
+      <p>Mythos</p>
+    </div>
+  </div>
+
+  <div class="home-container">
+    <div class="option-box" (click)="navigateTo('mythos')">
+      <p>Mythos</p>
+    </div>
+  </div>
+
+  <div class="home-container">
+    <div class="option-box" (click)="navigateTo('mythos')">
+      <p>Mythos</p>
+    </div>
+  </div>
+
+  <div class="home-container">
     <div class="option-box" (click)="navigateTo('mythos')">
       <p>Mythos</p>
     </div>
