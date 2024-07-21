@@ -1,0 +1,41 @@
+/* layout.component.scss */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        color: #000; /* Cor preta */
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.3s; /* Transição suave para a cor */
+
+        &:hover {
+          color: #fff; /* Cor branca ao passar o mouse */
+        }
+      }
+    }
+  }
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
