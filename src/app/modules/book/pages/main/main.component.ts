@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InfoControllerService } from '../../../../services/services';
 import { Router } from '@angular/router';
 import { ComicsDTO } from '../../../../services/models/ComicsDTO ';
+import { MenuItem } from 'primeng/api/menuitem';
 
 @Component({
   selector: 'app-main',
@@ -13,15 +14,35 @@ export class MainComponent implements OnInit {
   totalRecords: number = 700; // Assumindo que você sabe o total de registros
   itemsPerPage: number = 10;
   currentPage: number = 0;
+  items: MenuItem[] | undefined;
 
   constructor(
     private router: Router,
-    private hello: InfoControllerService
+    private hello: InfoControllerService,
+    
   ){
     
   }
   ngOnInit(): void {
-    this.getHello(this.currentPage, this.itemsPerPage);
+    //this.getHello(this.currentPage, this.itemsPerPage);
+    this.items = [
+      {
+        label: 'File',
+        items: [
+          {label: 'New', icon: 'pi pi-fw pi-plus', command: () => {this.navigateTo('/new');}},
+          {label: 'Open', icon: 'pi pi-fw pi-folder-open', command: () => {this.navigateTo('/open');}},
+          {separator: true},
+          {label: 'Quit', icon: 'pi pi-fw pi-power-off'}
+        ]
+      },
+      {
+        label: 'Edit',
+        items: [
+          {label: 'Undo', icon: 'pi pi-fw pi-undo'},
+          {label: 'Redo', icon: 'pi pi-fw pi-repeat'}
+        ]
+      }
+    ];
   }
 
   private getHello(page: number, size: number){
@@ -40,6 +61,10 @@ export class MainComponent implements OnInit {
     this.currentPage = event.page;
     this.itemsPerPage = event.rows;
     this.getHello(this.currentPage, this.itemsPerPage);
+  }
+
+  navigateTo(path: string): void {
+    this.router.navigate([path]);
   }
 
 }

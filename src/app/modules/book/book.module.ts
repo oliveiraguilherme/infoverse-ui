@@ -8,6 +8,9 @@ import { MainComponent } from './pages/main/main.component';
 import { PanelModule } from 'primeng/panel';
 import { PaginatorModule } from 'primeng/paginator'
 import { CardModule } from 'primeng/card';
+import { MenubarModule } from 'primeng/menubar';
+import { AvatarModule } from 'primeng/avatar'; // Adicione esta linha
+
 
 
 
@@ -20,7 +23,9 @@ import { CardModule } from 'primeng/card';
     BookRoutingModule,
     PanelModule,
     PaginatorModule,
-    CardModule
+    CardModule,
+    MenubarModule,
+    AvatarModule 
   ]
 })
 export class BookModule { }

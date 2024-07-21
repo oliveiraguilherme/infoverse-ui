@@ -1,0 +1,21 @@
+<div class="comics-container">
+    <div class="grid">
+      <div *ngFor="let comic of mythosResponse" class="col-12 sm:col-6 md:col-4 lg:col-3">
+          <div class="comic-details">
+            <div class="comic-image">
+              <img [src]="comic.img" alt="{{ comic.tittle }}">
+            </div>
+            <div class="comic-info">
+              <h3>{{ comic.tittle }}</h3>
+              <p><strong>Price:</strong>{{ comic.value }}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <p-paginator [rows]="itemsPerPage" [totalRecords]="totalRecords" (onPageChange)="onPageChange($event)" [rowsPerPageOptions]="[5, 10, 20]"></p-paginator>
+  </div>
+  
+  <ng-template #noComics>
+    <p>No comics available.</p>
+  </ng-template>
+  

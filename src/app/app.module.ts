@@ -13,6 +13,9 @@ import { CardModule } from 'primeng/card';
 import { PanelModule } from 'primeng/panel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importação necessária
 import { PaginatorModule } from 'primeng/paginator'
+import { MythosModule } from './modules/mythos/mythos.module';
+import { BookModule } from './modules/book/book.module';
+import { LayoutComponent } from './pages/layout/layout.component';
 
 
 
@@ -20,7 +23,8 @@ import { PaginatorModule } from 'primeng/paginator'
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LayoutComponent
   ],
     imports: [
         BrowserModule,
@@ -31,7 +35,9 @@ import { PaginatorModule } from 'primeng/paginator'
         PanelModule,
         BrowserAnimationsModule,
         PaginatorModule,
-        CardModule
+        CardModule,
+        MythosModule,
+        BookModule
     ],
   providers: [
     HttpClient,
